@@ -1,18 +1,21 @@
 body {
-    min-width: 700px;
-    max-width: 2500px;
+    min-width: 600px;
+    max-width: 1366px;
     margin: 0 auto;
+    font-family: Roboto;
+    color: rgb(248, 248, 248);
 }
 .block {
     width: 40%; 
     margin: 30px auto;
-    padding: 50px 30px 30px 30px;
+    padding: 60px 30px 30px 30px;
     box-sizing: border-box;
-    background-color: rgb(247, 247, 247);
-    border-radius: 2px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, .1);
-    font-family: Roboto;
-    font-weight: 300;
+    background: linear-gradient(25deg, rgb(255, 28, 115), rgb(255, 140, 32), rgb(255, 230, 0));
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+.cold {
+    background: linear-gradient(25deg, rgb(255, 28, 115), rgb(160, 43, 238), rgb(41, 94, 209));
 }
 p {
     font-family: Roboto;
@@ -20,27 +23,31 @@ p {
     color: rgb(150, 150, 150);
     text-align: center;
 }
-.block h1 {
-    text-transform: uppercase;
-    font-family: Josefin Sans;
-    font-size: 45px;
-    font-weight: 700;
+.block .h1 {
+    font-size: 35px;
     text-align: center;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, .15);
+    text-shadow: 3px 0px 10px rgba(0, 0, 0, .3);
     margin-bottom: 50px; 
+    letter-spacing: 1px;
+}
+.block .note {
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 .block .inp {
-    padding: 9px 14px;
-    border: 1px solid rgb(230, 230, 230);
-    border-radius: 4px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, .05);
+    flex: 3;
+    padding: 9px 14px 12px 14px;
+    border-top: 3px solid rgb(248, 248, 248);
+    border-bottom: 3px solid rgb(248, 248, 248);
+    border-left: 3px solid rgb(248, 248, 248);
+    border-radius: 40px 0 0 40px;
     background-color: rgb(248, 248, 248);
-    margin-bottom: 30px;
 }
-.block #city-input {
-    font-family: Roboto;
-    font-weight: 300;
-    font-size: 27px;
+.block .inp #city-input {
+    font-size: 25px;
+    color: rgb(68, 68, 68);
     padding: 2px;
     background-color: rgb(248, 248, 248);
     width: 100%;
@@ -51,17 +58,57 @@ p {
     outline: none;
 }
 .block input::placeholder {
-    color: rgb(150, 150, 150);
+    color: rgb(184, 184, 184);
     }
-.block .outp {
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, .05);
+.block .btn {
+    flex: 1;
+    border: 2px solid rgb(248, 248, 248);
+    border-radius: 0 40px 40px 0;
+    background: transparent;
+    color: rgb(248, 248, 248);
+    font-size: 25px;
+    padding-bottom: 5px;
+    text-shadow: 3px 0px 10px rgba(0, 0, 0, .3);
 }
-
+.block .btn:focus {
+    outline: none;
+}
+.block .btn:hover {
+    cursor: pointer;
+}
+.block .btn:active {
+    border: 0px solid rgb(248, 248, 248);
+}
+.block .outp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0 20px 0;
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px 0;
+}
+.block .city {
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
 .block .tem {
-    color: rgb(65, 65, 65);
-    font-size: 27px;
-    padding: 9px 14px;
-    background-color: rgb(247, 247, 247);
-    max-width: 570px;
-    text-decoration: none;
+    font-size: 60px;
+    padding-left: 4.5%;
+}
+.block .icon_desc {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.block .icon {
+    width: 40px;
+    margin-right: 10px;
+}
+.block img {
+    width: 100%;
+}
+.block .desc {
+    font-size: 14px;
 }
