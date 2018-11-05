@@ -36,18 +36,18 @@ function weather() {
             icon.appendChild(img)
             icon_desc.appendChild(desc)
 
-            city.textContent = `${$city.value}, ${JSONString.sys.country}`
+            city.textContent = `${JSONString.name}, ${JSONString.sys.country}`
             tem.textContent = `${Math.floor(JSONString.main.temp - 273)}°`
             img.src = `img/${JSONString.weather[0].icon}.svg`
             desc.textContent = `${JSONString.weather[0].description}`
             
-            $city.value = "" 
             if (Math.floor(JSONString.main.temp - 273) < 0) {
                 $block.className = 'block cold'
             }
             if (Math.floor(JSONString.main.temp - 273) >= 0) {
                 $block.className = 'block'
             }
+            $city.value = "" 
         }
     }
     xhr.send()

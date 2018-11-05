@@ -1,19 +1,42 @@
 body {
-    min-width: 600px;
+    min-width: 640px;
     max-width: 1366px;
     margin: 0 auto;
     font-family: Roboto;
     color: rgb(248, 248, 248);
 }
+
+
+
 .block {
     width: 40%; 
-    margin: 30px auto;
+    margin: 20px auto;
     padding: 60px 30px 30px 30px;
     box-sizing: border-box;
     background: linear-gradient(25deg, rgb(255, 28, 115), rgb(255, 140, 32), rgb(255, 230, 0));
     border-radius: 5px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
+
+@media only screen and (max-width: 960px) {
+    body {
+        min-width: 640px; 
+    }
+    .block {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        min-width: 320px; 
+    }
+    .block {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
 .cold {
     background: linear-gradient(25deg, rgb(255, 28, 115), rgb(160, 43, 238), rgb(41, 94, 209));
 }
@@ -56,6 +79,10 @@ p {
 }
 .block input:focus {
     outline: none;
+}
+.block input:required {
+    outline: none;
+    box-shadow: none;
 }
 .block input::placeholder {
     color: rgb(184, 184, 184);
