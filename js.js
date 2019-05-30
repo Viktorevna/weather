@@ -1,7 +1,7 @@
 const $block = document.querySelector('.block')
 const $city = document.querySelector('#city-input')
 const $button = document.querySelector('.btn')
-
+const $form = document.querySelector('#form')
 
 const outp = document.createElement('div')
 
@@ -19,7 +19,8 @@ icon_desc.classList.add('icon_desc')
 icon.classList.add('icon')
 desc.classList.add('desc')
 
-function weather() {
+function weather(event) {
+    event.preventDefault()
     const WeatherURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + $city.value + '&appid=021d1fbef7403d32bf662f1881a44606'
     const xhr = new XMLHttpRequest()
     xhr.open('GET', WeatherURL)
@@ -53,17 +54,4 @@ function weather() {
     xhr.send()
 }
 
-$city.addEventListener('keyup', function(event) {
-    if (event.code === 'Enter' ) {
-        if ($city.value != "") {
-            weather()
-        }
-    }
-})
-$button.addEventListener('click', function() {
-    if ($city.value != "") {
-        weather()
-    }
-})
-
-
+$form.addEventListener('submit', weather)
